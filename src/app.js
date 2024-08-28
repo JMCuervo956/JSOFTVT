@@ -5,10 +5,10 @@ import {PORT} from './config.js'
 
 const app = express()
 
-app.get('/', async(req, res)=>{
-    const rows = await pool.query("select * from preguntas")
-    res.json(rows)
-})
+app.get('/', (req, res)=>{
+        res.send('Hola aqui estamos solo data')
+    }) 
+    
 
 app.listen(PORT)
 console.log('Server en port ', PORT)
