@@ -1,4 +1,5 @@
 import {createPool} from 'mysql2';
+//import {createConnection} from 'mysql2/promise';
 import mysql from 'mysql2/promise';
 import {
     DB_HOST,
@@ -15,3 +16,24 @@ export const pool = mysql.createPool({
     database: DB_NAME,
     port: DB_PORT
 })
+
+/*
+
+export const pool = mysql.createPool({
+    host: 'localhost',
+    user: 'josema',
+    password: 'josema',
+    database: 'sarlaft',
+    port: 3306
+})
+
+connection.connect((error)=>{
+    if(error){
+        console.log('Error de Conexion es: '+error);
+        return;
+    };
+    console.log('conectado a la base de datos');
+ });
+ 
+module.exports = connection;
+*/
