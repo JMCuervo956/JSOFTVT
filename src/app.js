@@ -5,7 +5,7 @@ import {PORT} from './config.js'
 
 const app = express()
 
-app.get('/ping', (req, res)=>{
+app.get('/', (req, res)=>{
     const [result] = pool.query("select 'hola mundo' as result");
     res.json(result[0])
 });
