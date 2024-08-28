@@ -31,7 +31,7 @@ app.get('/create', async(req, res)=>{
 });
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
+    console.log(`Server running at http://localhost:${PORT}/`);
   });
 /*
  app.listen(PORT)
