@@ -7,8 +7,8 @@ const app = express()
 
 app.get('/', async (req, res) => {
     try {
-      const result = await pool.query("SELECT * FROM preguntas");
-      res.json(result.rows);
+      const rows = await pool.query("select * from preguntas")
+      res.json(rows)
     } catch (err) {
       console.error('Error executing query', err.stack);
       res.status(500).send('Error retrieving data');
