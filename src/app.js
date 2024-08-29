@@ -3,17 +3,13 @@ import express from 'express'
 import {pool} from './db.js'
 import {PORT} from './config.js'
 
-const app = express() 
+const app = express()
 
-app.get('/', async (req, res) => {
-    try {
-      const rows = await pool.query("select * from preguntas")
-      res.json(rows)
-    } catch (err) {
-      console.error('Error executing query', err.stack);
-      res.status(500).send('Error retrieving data');
-    }
-  });
+app.get('/', async(req, res)=>{
+    const rows = await pool.query("select * from preguntas")
+    res.json(rows)
+})
+
 
 app.get('/ping', async(req, res)=>{
     const [result] = await pool.query("select 'hola mundo' as result");
